@@ -17,7 +17,7 @@ services:
       - db 
     environment: 
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/clientes?useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_USERNAME: mysql
       SPRING_DATASOURCE_PASSWORD: root
     networks: 
       - backend
@@ -30,7 +30,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: clientes
-      MYSQL_USER: root
+      MYSQL_USER: mysql
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
