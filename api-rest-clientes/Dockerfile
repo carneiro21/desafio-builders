@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine as build
+FROM openjdk:jdk-11.0.11_9-alpine as build
 
 
 WORKDIR /app
@@ -21,7 +21,8 @@ RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 
-FROM openjdk:8-jre-alpine
+FROM openjdk:11.0.11_9-alpine
+
 
 ARG DEPENDENCY=/app/target/dependency
 
